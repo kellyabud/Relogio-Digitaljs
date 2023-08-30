@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relogio digital</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="relogio">
+        <div id="clock"></div>
+
+    </div>
+
+    <script>
+        // Neste exemplo, criamos uma função chamada atualizarRelogio que usa o objeto Date para obter a hora atual, os minutos e os segundos. Em seguida, atualizamos o conteúdo de uma <div> com o ID "clock" com a hora atual em formato de texto.
+        function atualizarRelogio() {
+            const agora = new Date(); // Obtém a hora atual
+            const hora = agora.getHours().toString().padStart(2, '0'); // Adiciona zero à esquerda, se necessário
+            const minutos = agora.getMinutes().toString().padStart(2, '0'); // Adiciona zero à esquerda, se necessário
+            const segundos = agora.getSeconds().toString().padStart(2, '0'); // Adiciona zero à esquerda, se necessário
+
+
+            const clockElement = document.getElementById('clock');
+            clockElement.textContent = `${hora}:${minutos}:${segundos}`;
+
+
+
+        }
+
+        // Atualize o relógio a cada segundo
+        setInterval(atualizarRelogio, 1000);
+
+        // Chame a função uma vez para exibir a hora atual imediatamente
+        atualizarRelogio();
+    </script>
+</body>
+
+</html>
+
+
+
+
+</body>
+
+</html>
